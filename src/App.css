@@ -1,0 +1,166 @@
+@import url('https://fonts.googleapis.com/css2?family=Alata&display=swap');
+
+
+p,
+h1,
+h2,
+a {
+    font-family: 'Alata', sans-serif;
+}
+
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 30vmin;
+  /* pointer-events: none; */
+  padding-bottom: 10px;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 10vh;
+  /* display: flex; */
+  flex-direction: column;
+  align-items: baseline;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+  text-align: center;
+  width: 100%;
+}
+
+.App-header a {
+    text-decoration: none;
+    /* float: right; */
+    display: inline;
+    padding: 10px 10px 10px 10px;
+}
+
+.App-header a:visited {
+    color: white;
+}
+
+.App-header a:hover {
+    color: yellow;
+}
+
+.App-link {
+  color: blue;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.MainPage {
+    padding-top: 50px;
+}
+
+.ReportPage {
+    padding-top: 50px;
+}
+
+.centerMe {
+    text-align: center;
+    justify-content: center;
+    display: flex;
+    padding-top: 50px;
+}
+
+.infoDiv {
+    border: 2px solid black;
+    width: 60%;
+    background: #B1ACF2;
+    padding: 30px;
+    border-radius: 30px;
+}
+
+.reportDiv {
+    border: 2px solid black;
+    width: 60%;
+    background: #B1ACF2;
+    padding: 30px;
+    border-radius: 30px;
+}
+
+.registerDiv {
+    border: 2px solid black;
+    width: 60%;
+    background: #B1ACF2;
+    padding: 30px;
+    border-radius: 30px;
+}
+
+.reports a {
+    padding: 5px;
+    color: black;
+}
+
+.reports a:hover {
+    text-transform: uppercase;
+    font-weight: bolder;
+}
+
+.reports a:visited {
+    color: black;
+}
+
+.editDiv {
+    padding-top: 20px;
+}
+
+.editButton {
+    text-decoration: none;
+    border-radius: 25px;
+    padding: 10px;
+    color: black;
+    border: 2px solid black;
+    background-color: #e7e7e7;
+}
+
+
+textarea {
+    border: 1px solid black;
+    height: 457px;
+    width: 938px;
+}
+
+.all-messages {
+    width: 100%;
+    height: 30vh;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 2rem;
+}
+
+.all-messages p:nth-child(1n) {
+    background-color: #c0c;
+    padding: 5px 10px;
+    margin: 0 auto;
+}
+
+.all-messages p:nth-child(2n) {
+    background-color: #ccc;
+}
+
+.new-message {
+    width: 100%;
+    height: 5vh;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 2rem;
+    font-size: 1.8rem;
+}
