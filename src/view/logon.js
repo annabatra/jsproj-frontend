@@ -1,5 +1,13 @@
 import React from 'react';
 
+function logOut() {
+    localStorage.clear();
+    alert("Utloggad");
+    window.location.href = "/";
+}
+
+
+
 class Login extends React.Component {
   constructor(props) {
     super(props);
@@ -12,7 +20,7 @@ class Login extends React.Component {
 
   handleSubmit = (e) => {
       e.preventDefault();
-      const apiUrl = 'https://jsramverkproject.jsramverk.me/login/';
+      const apiUrl = 'https://jsramverkproject-api.jsramverk.me/login/';
 
       const user = {
           "email": this.state.email,
@@ -29,7 +37,9 @@ class Login extends React.Component {
       .then((response) => response.json())
       .then(data => {
           if (data.data) {
+              console.log(data);
               localStorage.setItem('token', data.data.token);
+              localStorage.setItem('email', data.data.user.email);
               alert("Inloggad!");
               this.props.history.push("/");
 
@@ -65,6 +75,7 @@ class Login extends React.Component {
             </label><p>
             <input type="submit" value="Login" /></p>
           </form>
+          <input className='button' type='submit' value='Logga ut' onClick={logOut}/>
       </div>
     );
   }

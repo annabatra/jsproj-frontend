@@ -5,44 +5,43 @@ class Cookies extends React.Component {
         super(props);
 
         this.state = {
-            title: null,
-            image: null,
-            description: null,
+            //måste först fånga upp alla kakor så man kan visa dom innan man väljer id
+            cookies: [],
         };
     }
 
     componentDidMount() {
-        var id = this.props.match.params.id;
-        var apiUrl = 'https://jsramverkproject.jsramverk.me/cookies/' + id;
+        //var id = this.props.match.params.id;
+        var apiUrl = 'https://jsramverkproject-api.jsramverk.me/cookies/';
 
         fetch(apiUrl)
             .then((response) => response.json())
             .then(data => {
+                console.log(data);
                 this.setState({
-                    title: data.data.title,
-                    image: data.data.image,
-                    description: data.data.description
+                    cookies: data,
                 });
+                console.log(this.state.cookies)
             });
     }
 
     render() {
-        var url = window.location.href.slice(0, -1);
         var id = this.props.match.params.id;
         return (
-            <div className="App">
+            <div>
+            <h2>KAKOR</h2>
+            <div className="bigCookieHolder">
 
-            <nav className="reports">
-                <a href={`${url}1`}>Cookie1</a>
-                <a href={`${url}2`}>Cookie2</a>
-                <a href={`${url}3`}>Cookie3</a>
-            </nav><br/>
-            <a href={"/buy/" + id} className="button">Investera</a>
-            <br/><br/>
-            <h2>{this.state.title}</h2>
-            <article className="article-standard"
-                dangerouslySetInnerHTML={{__html: this.state.description}} >
-            </article>
+                {this.state.cookies.map((cookies) => (
+                    <div className="cookieHolder">
+                    <h3>{cookies.title}</h3>
+                    <img src={require(`./img/${cookies.image}`)} alt={"picture"} />
+                    <p>{cookies.description}</p>
+                    <p>{cookies.price} kr/st</p>
+                    <a class="pricebutton" href={"/pricegraph/" + cookies.id}>Prisutveckling</a>
+                    </div>
+               ))}
+            </div>
             </div>
         )
     }

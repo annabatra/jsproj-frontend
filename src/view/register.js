@@ -13,7 +13,7 @@ class Register extends React.Component {
 
   handleSubmit = (e) => {
       e.preventDefault();
-      const apiUrl = 'https://jsramverkproject.jsramverk.me/register/';
+      const apiUrl = 'https://jsramverkproject-api.jsramverk.me/register/';
 
       const user = {
           "email": this.state.email,
@@ -53,7 +53,7 @@ class Register extends React.Component {
   render() {
     return (
         <div class="registerDiv">
-            <h3>Registrera användare</h3>
+            <h1>Registrera användare</h1>
             <form onSubmit={this.handleSubmit}>
             <label>
                 <p>E-post:</p>
